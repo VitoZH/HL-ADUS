@@ -20,7 +20,7 @@
         </select>
       </div>
       <!-- 阻止button按钮默认提交事件 -->
-      <button class="btn btn-success">Submit</button>
+      <button @click.prevent="update" class="btn btn-success">Submit</button>
     </form>
   </div>
 </template>
@@ -28,6 +28,7 @@
 <script>
 import axios from 'axios'
 export default {
+    props:['id'],
   data(){
     return {
       // 封装表单数据
@@ -37,12 +38,26 @@ export default {
       }
     }
   },
+  mounted(){
+      this.getDataById()
+  },
   methods:{
-    add(){
+      getDataById(){
+          axios
+          .get(`http://localhost:3000/heros/${this.id}`)
+          .then((res)=>{
+              if(res.status===200){
+                  this.formData = res.data
+              } else {
+                  alert('获取数据失败')
+              }
+          })
+      },
+    update(){
       axios
-      .post('http://localhost:3000/heros',this.formData)
+      .put(`http://localhost:3000/heros/${this.id}`,this.formData)
       .then((res)=>{
-        if(res.status === 201){
+        if(res.status === 200){
           this.$router.push('/heroes')
         } else {
           alert('添加失败')

@@ -6,6 +6,7 @@ import WeaponList from './views/weapon/WeaponList.vue'
 import EquipList from './views/equip/EquipList.vue'
 import AppList from './views/hero/AppList.vue'
 import HeroAdd from './views/hero/HeroAdd.vue'
+import HeroEdit from './views/hero/HeroEdit.vue'
 // 注册VueRouter插件到vue，使用全局script标签会自动调用Vue.use
 Vue.use(VueRouter)
 // 创建路由对象
@@ -40,6 +41,12 @@ const router = new VueRouter({
             name: 'heroesadd',
             path: '/heroes/add',
             component: HeroAdd
+        },
+        {
+            name: 'heroedit',
+            path: '/heroes/edit/:id',
+            component: HeroEdit,
+            props:true
         }
     ]
 })
