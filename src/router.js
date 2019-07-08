@@ -5,12 +5,13 @@ import VueRouter from 'vue-router'
 import WeaponList from './views/weapon/WeaponList.vue'
 import EquipList from './views/equip/EquipList.vue'
 import AppList from './views/hero/AppList.vue'
+import HeroAdd from './views/hero/HeroAdd.vue'
 // 注册VueRouter插件到vue，使用全局script标签会自动调用Vue.use
 Vue.use(VueRouter)
 // 创建路由对象
 const router = new VueRouter({
     // 配置类名
-    linkExactActiveClass:'active',
+    linkActiveClass:'active',
     // 配置路有规则
     routes: [
         {
@@ -34,6 +35,11 @@ const router = new VueRouter({
             name: 'heroes',
             path: '/heroes',
             component: AppList
+        },
+        {
+            name: 'heroesadd',
+            path: '/heroes/add',
+            component: HeroAdd
         }
     ]
 })

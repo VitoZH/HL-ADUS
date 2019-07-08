@@ -16,15 +16,11 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppSilder from "./components/AppSilder.vue";
-import AppList from "./views/hero/AppList.vue";
 export default {
   name: "app",
   components: {
-    // HelloWorld,
-    // HeroList
     AppHeader,
     AppSilder,
-    AppList
   }
 };
 </script>
