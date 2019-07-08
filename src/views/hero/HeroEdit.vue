@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="sub-header">添加英雄</h2>
+    <h2 class="sub-header">修改英雄</h2>
     <form>
       <div class="form-group">
         <label for="txtName">姓名</label>
@@ -20,7 +20,7 @@
         </select>
       </div>
       <!-- 阻止button按钮默认提交事件 -->
-      <button class="btn btn-success" @click.prevent="add">Submit</button>
+      <button class="btn btn-success">Submit</button>
     </form>
   </div>
 </template>
