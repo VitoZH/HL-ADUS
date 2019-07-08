@@ -15,7 +15,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(value,index) in list :key="index">
+              <tr>
                 <td>1,001</td>
                 <td>Lorem</td>
                 <td>ipsum</td>

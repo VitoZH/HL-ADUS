@@ -2,13 +2,14 @@
 import Vue from 'vue'
 // 导入vue-router模块
 import VueRouter from 'vue-router'
-import Foo from './components/Foo.vue'
-import Bar from './components/Bar.vue'
-import AppList from './components/AppList.vue'
-// 注册到vue
+import Foo from './views/weapon/Foo.vue'
+import Bar from './views/equip/Bar.vue'
+import AppList from './views/hero/AppList.vue'
+// 注册VueRouter插件到vue，使用全局script标签会自动调用Vue.use
 Vue.use(VueRouter)
-// 配置路由
+// 创建路由对象
 const router = new VueRouter({
+    // 配置路有规则
     routes: [
         {
             name: 'home',
