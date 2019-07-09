@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   data(){
     return {
@@ -39,8 +38,8 @@ export default {
   },
   methods:{
     add(){
-      axios
-      .post('http://localhost:3000/heros',this.formData)
+      this.axios
+      .post('heros',this.formData)
       .then((res)=>{
         if(res.status === 201){
           this.$router.push('/heroes')

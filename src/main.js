@@ -11,6 +11,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import './assets/css/index.css'
 Vue.config.productionTip = false
 
+// 让vue实例都具有axios属性
+import axios from 'axios'
+Vue.prototype.axios = axios
+
+// 配置全局默认地址
+axios.defaults.baseURL = 'http://localhost:3000/'
 new Vue({
   el:'#app',
   render: h => h(App),

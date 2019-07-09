@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     props:['id'],
   data(){
@@ -43,8 +42,8 @@ export default {
   },
   methods:{
       getDataById(){
-          axios
-          .get(`http://localhost:3000/heros/${this.id}`)
+          this.axios
+          .get(`heros/${this.id}`)
           .then((res)=>{
               if(res.status===200){
                   this.formData = res.data
@@ -54,8 +53,8 @@ export default {
           })
       },
     update(){
-      axios
-      .put(`http://localhost:3000/heros/${this.id}`,this.formData)
+      this.axios
+      .put(`heros/${this.id}`,this.formData)
       .then((res)=>{
         if(res.status === 200){
           this.$router.push('/heroes')
